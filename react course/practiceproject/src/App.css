@@ -1,0 +1,16 @@
+.mytransition{
+    transition: all;
+    transition-duration: 100sec;
+}
+nav {
+    position: relative;
+  }
+  
+  .group-hover\:flex {
+    display: flex;
+  }
+  
+  .group:hover .group-hover\:flex {
+    display: flex;
+  }
+  
