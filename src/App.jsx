@@ -8,6 +8,10 @@ import Login from './Components/Login.jsx'
 import Profile from './Components/profile.jsx'
 import  { ThemeProvider } from './context/Theme.js'
 import { useEffect, useState } from 'react'
+import Todo from './Pages/Todo/Todo.jsx'
+import Todocontextprovider from './context/Todoprovider.jsx'
+
+
 function App() {
   const [thememode,setThememode]=useState('light')
   const router=createBrowserRouter([
@@ -30,6 +34,10 @@ function App() {
         {
           path:"/profile",
           element:<Profile/>
+        },
+        {
+          path:"/todo",
+          element:<Todo/>
         }
       ]
     }
@@ -48,7 +56,9 @@ function App() {
     <>
       <ThemeProvider value={{thememode,lighttheme,darktheme}}>
         <Usercontextprovider>
+          <Todocontextprovider>
               <RouterProvider router={router}/>
+            </Todocontextprovider>
         </Usercontextprovider>
       </ThemeProvider>
     </>
